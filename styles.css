@@ -42,6 +42,13 @@
     --divider: rgba(0, 0, 0, 0.06);
 }
 
+/* ── Light Theme Adaptive Target Override ───────────────────── */
+[data-theme="light"] .threads-img-logo {
+    /* Keeps it at the identical soft tone intensity for light mode text variables */
+    filter: brightness(0) invert(0);
+    opacity: 0.65;
+}
+
 /* ── Reset ───────────────────────────────────────────────────── */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -202,9 +209,10 @@ a {
     z-index: 1;
 }
 
+/* ── Social Icons Grid Container ─────────────────────────────── */
 .social-icons {
     display: flex;
-    gap: 4px;
+    gap: 8px;
     position: relative;
     z-index: 1;
 }
@@ -219,18 +227,58 @@ a {
     color: var(--text-secondary);
     background: var(--surface);
     border: 1px solid var(--card-border);
-    transition: color var(--transition), background var(--transition), border-color var(--transition);
+    transition: 
+        color var(--transition), 
+        background var(--transition), 
+        border-color var(--transition),
+        transform var(--transition);
 }
 
 .social-icon:hover {
     color: var(--text-primary);
     background: var(--surface-hover);
     border-color: var(--card-border-hover);
+    transform: translateY(-2px);
+}
+
+.social-icon:hover .threads-img-logo {
+    opacity: 1;
 }
 
 .social-icon:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
+}
+
+.social-icon svg {
+    display: block;
+    margin: auto;
+    pointer-events: none;
+}
+
+.social-icon[data-text="Facebook"] svg  { width: 52%; height: 52%; }
+.social-icon[data-text="Instagram"] svg { width: 52%; height: 52%; }
+.social-icon[data-text="X"] svg         { width: 48%; height: 48%; }
+.social-icon[data-text="Discord"] svg   { width: 52%; height: 52%; }
+
+.threads-img-logo {
+    display: block;
+    margin: auto;
+    width: 53%;   
+    height: 53%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    
+    filter: brightness(0) invert(1);
+    opacity: 0.65; 
+    
+    transition: opacity var(--transition);
+}
+
+/* ── Seamless Interactive Hover Syncing ────────────────────── */
+.social-icon.social-threads:hover::before {
+    background-color: var(--text-primary);
 }
 
 /* ── CTA Cards ───────────────────────────────────────────────── */
