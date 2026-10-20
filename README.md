@@ -1,6 +1,6 @@
 # 🌐 Link in Bio Template
 
-A clean, modern, mobile-friendly “Link in Bio” page. Inspired by [markodenic.com](https://markodenic.com).  
+A clean, modern, mobile-friendly “Link in Bio” page. Inspired by [markodenic.com](https://markodenic.com) using [this template](https://github.com/markodenic/links).
 Perfect for creators, developers, and professionals who want a personal landing page with their most important links and social media accounts.
 
 ---
